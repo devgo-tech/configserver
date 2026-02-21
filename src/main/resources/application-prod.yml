@@ -9,16 +9,16 @@ spring:
           uri: https://github.com/devgo-tech/config-server-properties.git
           refresh-rate: 1
   zipkin:
-    base-url: http://zipkin-server:9411
+    base-url: http://zipkin:9411
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://eurekaserver:8761/eureka/
   instance:
-    hostname: config-server
+    hostname: configserver #docker service name
     instance-id: ${spring.application.name}:${random.value}
 
 
@@ -28,7 +28,7 @@ logging:
       springframework: DEBUG
 
 zipkin:
-  baseUrl: http://zipkin-server:9411
+  baseUrl: http://zipkin:9411
 
 server:
   port: 8888
